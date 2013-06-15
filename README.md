@@ -15,7 +15,8 @@ To retrieve by IATA:
 
 Both of the above will either return false (handle yourself), or an object, which can be used as follows (for example):  
 
-`` $airportName = $data->airportName;	// Redmond Roberts Field  
+```php
+$airportName = $data->airportName;	// Redmond Roberts Field  
 $city = $data->city;					// Redmond  
 $icao = $data->icao;					// KRDM  
 $iata = $data->iata;					// RDM  
@@ -25,7 +26,8 @@ foreach($data->charts as $chart){
 	 $fileURL 		= $chart->file_url;			// "http://a1d40817df887201f900-46f76acc0dd0843121c39db1cec939a0.r80.cf1.rackcdn.com/1-NW1TO.pdf"  
 	 $fileSize 		= $chart->file_size;		// "226725"  
 	 $fileThumbnail	= $chart->thumbnail_url;	// "http://a1d40817df887201f900-46f76acc0dd0843121c39db1cec939a0.r80.cf1.rackcdn.com/1-NW1TO.png"  
-}``  
+}
+```  
 
 Also includes the Search function, but **does not** format response. See charts.aero documentation for response format.  
 `` $data = AeroCharts::Search('Portland'); ``  
