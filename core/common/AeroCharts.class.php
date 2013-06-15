@@ -70,7 +70,7 @@ class AeroCharts extends CodonData {
 			'iata' 			=> $response->airport->iata,
 			'charts' 		=> $response->data
 		);
-		return $ret;
+		return (object)$ret;
 	}
 }
 
