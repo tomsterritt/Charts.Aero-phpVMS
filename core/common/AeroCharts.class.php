@@ -58,19 +58,19 @@ class AeroCharts extends CodonData {
 	
 	private static function ChartArray($data){
 		$response = json_decode($data);
-		if($response == NULL || $response['status'] !== 'success'){
+		if($response == NULL || isset($response->message) || !isset($response->status) || $response->status !== 'success'){
 			// Either it's broken or you don't have a subscription. Display your own friendly message.
 			return false;
 		}
 		
 		$ret = array(
-			'airportName' 	=> $response['airport']['airport_name'],
-			'city' 			=> $response['airport']['city'],
-			'icao' 			=> $response['airport']['icao'],
-			'iata' 			=> $response['airport']['iata'],
-			'charts' 		=> (object)$response['data']
+			'airportName' 	=> $response->airport->airport_name,
+			'city' 			=> $response->airport->city,
+			'icao' 			=> $response->airport->icao,
+			'iata' 			=> $response->airport->iata,
+			'charts' 		=> $response->data
 		);
-		return (object)$ret;
+		return $ret;
 	}
 }
 
