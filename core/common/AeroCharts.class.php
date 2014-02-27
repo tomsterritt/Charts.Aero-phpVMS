@@ -35,7 +35,7 @@ class AeroCharts extends CodonData {
 		if(strlen($iata) > 3 || strlen($iata) == 0){
 			return false;
 		}
-		$data = array('iata' => $icao);
+		$data = array('iata' => $iata);
 		return self::ChartArray(self::MakeRequest('https://charts.p.mashape.com/retrieve/iata', $data));
 	}
 	
