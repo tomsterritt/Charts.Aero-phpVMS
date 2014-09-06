@@ -3,6 +3,9 @@ Charts.Aero-phpVMS
 
 phpVMS class for retrieving charts from Charts.aero
 
+Please refer to the [charts.aero website](http://charts.aero) or [Facebook page](https://www.facebook.com/charts.aero) for issues not relating to this code.
+
+
 Usage
 -----
 Ensure you enter your mashape authorisation key in the static variable at the top of the class.
@@ -38,6 +41,5 @@ Also includes the Search function, but **does not** format response. See charts.
 $data = AeroCharts::Search('Portland');
 ```
 
-Notice
-------
+###Note
 **This has not and will not be tested, so I make no guarantee that this will work, however will maintain this repo, so feel free to create issues or pull requests for changes.**
